@@ -1,0 +1,1389 @@
+/********** Template CSS **********/
+:root {
+    --primary: #2EB872;
+    --light: #F3F4F5;
+    --dark: #282F34;
+    --dark-color:#000000;
+    --secondary-color:#EE5007;
+    --primary-color:#F8CB2E;
+    --white-color:#ffffff;
+    /* --font-weight-bold:700;  */
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    font-weight: 500;
+    transition: .5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+
+/*** Navbar ***/
+.navbar.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+.navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .navbar-brand img {
+    max-height: 50px;
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.navbar .navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 25px 0;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color:#EE5007;
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav .nav-link  {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar .navbar-nav {
+        border-top: 1px solid #EEEEEE;
+    }
+}
+
+.navbar .navbar-nav .nav-link {
+    color: var(--dark);
+    font-weight: 500;
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+
+/*** Header ***/
+.header-bg {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/bg-1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.btn-play {
+    position: relative;
+    display: block;
+    box-sizing: content-box;
+    width: 16px;
+    height: 26px;
+    border-radius: 100%;
+    border: none;
+    outline: none !important;
+    padding: 18px 20px 20px 28px;
+    background: #FFFFFF;
+}
+
+.btn-play:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: #FFFFFF;
+    border-radius: 100%;
+    animation: pulse-border 1500ms ease-out infinite;
+}
+
+.btn-play:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: #FFFFFF;
+    border-radius: 100%;
+    transition: all 200ms;
+}
+
+.btn-play span {
+    display: block;
+    position: relative;
+    z-index: 3;
+    width: 0;
+    height: 0;
+    left: -1px;
+    border-left: 16px solid var(--primary);
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+}
+
+@keyframes pulse-border {
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(2);
+        opacity: 0;
+    }
+}
+
+
+.header-carousel .owl-nav {
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-carousel .owl-nav .owl-prev,
+.header-carousel .owl-nav .owl-next {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    font-size: 22px;
+    transition: .5s;
+}
+
+.header-carousel .owl-nav .owl-prev:hover,
+.header-carousel .owl-nav .owl-next:hover {
+    background: #EE5007;
+    border-color: var(--primary);
+}
+
+.header-carousel .owl-dots {
+    position: absolute;
+    height: 45px;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 15px;
+    height: 15px;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    transition: .5s;
+}
+
+.header-carousel .owl-dot::after {
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 5px;
+    top: 4px;
+    left: 4px;
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+
+.header-carousel .owl-dot.active {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: var(--light);
+}
+
+
+/*** Img Border ***/
+.img-border {
+    position: relative;
+    height: 100%;
+    min-height: 400px;
+}
+
+.img-border::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 3rem;
+    bottom: 3rem;
+    border: 5px solid #EE5007;
+}
+
+.img-border img {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    width: calc(100% - 3rem);
+    height: calc(100% - 3rem);
+    object-fit: cover;
+}
+
+
+/*** Facts & Visiting Hours ***/
+.facts {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/bg-1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
+
+
+
+/*** Animal ***/
+.animal-item {
+    position: relative;
+    display: block;
+}
+
+.animal-item .animal-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .7);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 100px !important;
+    opacity: 0;
+    transition: .5s;
+}
+
+.animal-item:hover .animal-text {
+    opacity: 1;
+    padding-bottom: 20px !important;
+}
+
+
+
+/* sreethu */
+.factselephant {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/ELEPHANT/E6.jpg) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hoursmuthanga {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/ELEPHANT/E9.jpg) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hoursmuthanga .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+.visiting-hoursmuthanga .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+.visiting-hoursmuthanga .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hoursmuthanga .table tr:last-child td {
+    border: none;
+}
+.visiting-hourspmp {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/ELEPHANT/elephants-periyar.avif) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hourspmp .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+.visiting-hourspmp .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+.visiting-hourspmp .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hourspmp .table tr:last-child td {
+    border: none;
+}
+.visiting-hoursperiyar {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/TIGER/T5.webp) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hoursperiyar .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+.visiting-hoursperiyar .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+.visiting-hoursperiyar .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hoursperiyar .table tr:last-child td {
+    border: none;
+}
+.visiting-hoursparambikulam {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/TIGER/T8.jpeg) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hoursparambikulam .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+.visiting-hoursparambikulam .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+.visiting-hoursparambikulam .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hoursparambikulam .table tr:last-child td {
+    border: none;
+}
+.factsLion-tailed  {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/LIONTAILEDMACAQUE/L14.webp) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hourssilentvalley {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/LIONTAILEDMACAQUE/L9.webp) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hourssilentvalley .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+.visiting-hourssilentvalley .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+.visiting-hourssilentvalley .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hourssilentvalley .table tr:last-child td {
+    border: none;
+}
+.visiting-hourswayanad {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/LIONTAILEDMACAQUE/L11.webp) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hourswayanad .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+.visiting-hourswayanad .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+.visiting-hourswayanad .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hourswayanad .table tr:last-child td {
+    border: none;
+}
+.factspangolin {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/PANGOLIN/P6.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+
+.visiting-hourspangolin {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/PANGOLIN/p5.png) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hourspangolin .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+.visiting-hourspangolin .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+.visiting-hourspangolin .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hourspangolin .table tr:last-child td {
+    border: none;
+}
+.factsDhole {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/Dhole/d5.webp) center center no-repeat;
+    background-size: cover;
+}
+
+
+.visiting-hoursDhole {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/Dhole/d9.webp) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hoursDhole .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+.visiting-hoursDhole .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+.visiting-hoursDhole .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hoursDhole .table tr:last-child td {
+    border: none;
+}
+/*---------------------------------------
+  SITE FOOTER              
+-----------------------------------------*/
+.site-footer {
+    background-color: var(--dark-color);
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 30px;
+  }
+  
+  .site-footer-top {
+    background-color: var(--secondary-color);
+    background-image: url('../images/nainoa-shizuru-NcdG9mK3PBY-unsplash.jpg');
+    background-repeat: no-repeat;
+    margin-bottom: 70px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .site-footer-bottom {
+    border-top: 1px solid #1f1c1c;
+    margin-top: 60px;
+  }
+  
+  .site-footer-title {
+    color: var(--primary-color); 
+  }
+  
+  .site-footer-link,
+  .copyright-text {
+    color: var(--white-color);
+  }
+  
+  .site-footer-links {
+    padding-left: 0;
+  }
+  
+  .site-footer-link-item {
+    list-style: none;
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  .copyright-text {
+    font-size: var(--copyright-font-size);
+  }
+  
+  
+  /*---------------------------------------
+    SOCIAL ICON               
+  -----------------------------------------*/
+  .social-icon {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .social-icon-item {
+    list-style: none;
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  .social-icon-link {
+    background: var(--secondary-color);
+    border-radius: var(--border-radius-large);
+    color: var(--white-color);
+    font-size: var(--copyright-font-size);
+    display: block;
+    margin-right: 10px;
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    line-height: 36px;
+    transition: background 0.2s, color 0.2s;
+  }
+  
+  .social-icon-link:hover {
+    background: var(--primary-color);
+    color: var(--white-color);
+  }
+  
+  .social-icon-link span {
+    display: block;
+  }
+  
+  .social-icon-link span:hover::before{
+    animation: spinAround 2s linear infinite;
+  }
+  
+  @keyframes spinAround {
+    from {
+      transform: rotate(0deg)
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .bi-person{
+    color: #EE5007;
+  }
+  strong{
+    color: black;
+    font-weight:bolder;
+    font-size:700;
+    font-family:  'Outfit', sans-serif;
+  }
+  .m-0{color: #EE5007;
+
+  }
+  .far {
+color: #EE5007;
+  }
+  .btn{
+    color:white;
+    background-color:#F8CB2E;
+    border: #EE5007;
+  }
+  /*** client ***/
+.testimonial-carousel::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+}
+
+.testimonial-carousel::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    .testimonial-carousel::before,
+    .testimonial-carousel::after {
+        width: 200px;
+    }
+}
+
+@media (min-width: 992px) {
+    .testimonial-carousel::before,
+    .testimonial-carousel::after {
+        width: 300px;
+    }
+}
+
+.testimonial-carousel .owl-item .testimonial-text {
+    background: var(--light);
+    transform: scale(.8);
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text {
+    background: var(--secondary-color);
+    transform: scale(1);
+}
+
+.testimonial-carousel .owl-item .testimonial-text *,
+.testimonial-carousel .owl-item .testimonial-item img {
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text * {
+    color: var(--light) !important;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-item img {
+    border-color: black !important;
+} 
+
+.testimonial-carousel .owl-nav {
+    position: absolute;
+    width: 350px;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    transition: .5s;
+    z-index: 1;
+}
+
+.testimonial-carousel:hover .owl-nav {
+    width: 300px;
+    opacity: 1;
+}
+
+.testimonial-carousel .owl-nav .owl-prev,
+.testimonial-carousel .owl-nav .owl-next {
+    position: relative;
+    color:black;
+    font-size: 45px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-nav .owl-prev:hover,
+.testimonial-carousel .owl-nav .owl-next:hover {
+    color: var(--dark);
+}
+
+/* civet */
+.visiting-hourscivet {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/civet/civet1.jpg) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hourscivet .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+.visiting-hourscivet .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+.visiting-hourscivet .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hourscivet .table tr:last-child td {
+    border: none;
+}
+.factscivet {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/civet/civet7.jpg) center center no-repeat;
+    background-size: cover;
+} 
+/* .fa{
+    color:#EE5007;
+} */
+.me-2{
+    color: #EE5007;
+}
+/* kajal */
+.factscrocodile {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/Reptiles/backcroco.jpg) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hours1 {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/Reptiles/background1.jpg) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hours1 .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hours1 .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+
+.visiting-hours1 .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hours1 .table tr:last-child td {
+    border: none;
+}
+
+.factssnake {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/Reptiles/bronzesnake.jpg) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hours2 {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/Reptiles/backgroundsnake2.jpg) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hours2 .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hours2 .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+
+.visiting-hours2 .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hours2 .table tr:last-child td {
+    border: none;
+}
+
+.factsfrog {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/Reptiles/backgroundfrog1.jpg) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hours3 {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/Reptiles/frogbackground1.jpg) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hours3 .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hours3 .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+
+.visiting-hours3 .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hours3 .table tr:last-child td {
+    border: none;
+}
+
+.visiting-hours4 {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/Reptiles/bacgroundgecko.jpg) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hours4 .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hours4 .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+
+.visiting-hours4 .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hours4 .table tr:last-child td {
+    border: none;
+}
+
+.factstortoise {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/Reptiles/background.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+/* Adithya */
+.factsowl {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/owlone.jpg) center center no-repeat;
+    background-size: cover;
+}
+/* Adithya */
+.factstailor {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/tail/tail8.jpg) center center no-repeat;
+    background-size: cover;
+}
+/* Adithya */
+.factsbrown {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/brown/bro2.webp) center center no-repeat;
+    background-size: cover;
+}
+
+/* Adithya */
+.factscoucal {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/coucal/coucal3.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+/* Adithya */
+.factshoopes {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/hoopoe/hoopoe3.jpg) center center no-repeat;
+    background-size: cover;
+}
+/* #Adithya */
+
+.visiting-hourses {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/brown/bro10.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.visiting-hourses .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hourses .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+
+.visiting-hourses .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hourses .table tr:last-child td {
+    border: none;
+}
+
+/* #Adithya */
+
+.visiting-hours12 {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/tail/tail20.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.visiting-hours12 .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hours12 .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+
+.visiting-hours12 .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hours12 .table tr:last-child td {
+    border: none;
+}
+
+/* Adithya */
+.factsoriole {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/oriole/oriole8.jpeg) center center no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
+/* Adithya */
+.factsparrot {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/parrot/parrot8.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+/* #Adithya */
+
+.visiting-hours13 {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/oriole/wayanad1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.visiting-hours13 .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hours13 .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+
+.visiting-hours13 .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hours13 .table tr:last-child td {
+    border: none;
+}
+
+/* #Adithya */
+
+.visiting-hours14 {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/coucal/chimminy1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.visiting-hours14 .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hours14 .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+
+.visiting-hours14 .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hours14 .table tr:last-child td {
+    border: none;
+}
+
+
+/* #Adithya */
+
+.visiting-hours15 {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/hoopoe/periyar1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.visiting-hours15 .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hours15 .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+
+.visiting-hours15 .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hours15 .table tr:last-child td {
+    border: none;
+}
+
+
+/* #Adithya */
+
+.visiting-hours16 {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/parrot/chinnar2.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.visiting-hours16 .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hours16 .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+
+.visiting-hours16 .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hours16 .table tr:last-child td {
+    border: none;
+}
+
+.factslangur {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/Langur/silent.webp) center center no-repeat;
+    background-size: cover;
+} 
+/* langur */
+.visiting-hourslangur {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/Langur/silent2.jpg) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hourslangur .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+.visiting-hourslangur .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+.visiting-hourslangur .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hourslangur .table tr:last-child td {
+    border: none;
+}
+/* bat */
+.factsbat {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/bat/bat9.jpg) center center no-repeat;
+    background-size: cover;
+}
+/* bat */
+
+.visiting-hoursbat {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/bat/thattekad.webp) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hoursbat .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+.visiting-hoursbat .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+.visiting-hoursbat .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hourslangur .table tr:last-child td {
+    border: none;
+} 
+/* owl */
+.visiting-hoursowl {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/forest.jpg) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hoursowl .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+.visiting-hoursowl .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+.visiting-hoursowl .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hoursowl .table tr:last-child td {
+    border: none;
+}
+/* soorya */
+/* brahmi */
+.brahmi {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/plants/Brahmi.jpg) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hoursa {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/plants/Brahmi.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.visiting-hoursa .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hoursa .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+
+.visiting-hoursa .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hoursa .table tr:last-child td {
+    border: none;
+}
+
+
+/* trias stocksii benth */
+.factstrias {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/plants/bg-trais.jpg) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hoursb {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/plants/bg-trais.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.visiting-hoursb .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hoursb .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+
+.visiting-hoursb .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hoursb .table tr:last-child td {
+    border: none;
+}
+
+/* ixoraplant */
+
+.ixora {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/plants/ixora5.jpg) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hoursc {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/plants/ixora5.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.visiting-hoursc .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hoursc .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+
+.visiting-hoursc .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hoursc .table tr:last-child td {
+    border: none;
+}
+.me{
+    width: 5em;
+    border-radius: 50%;
+  }
+  /* tortoise */
+  .visiting-hourstortoise {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/Reptiles/background.jpg) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hourstortoise .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+.visiting-hourstortoise .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+.visiting-hourstortoise .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hourstortoise .table tr:last-child td {
+    border: none;
+}
+/* kudampuli */
+.factskudampuli {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/plants/bg-kpuli.jpg) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hourskudampuli {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/plants/kpuli.jpg) center center no-repeat;
+    background-size: cover;
+}
+.visiting-hourskudampuli .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+    border-color: rgba(255, 255, 255, .15);
+}
+.visiting-hourskudampuli .table {
+    color: var(--light);
+    background: rgba(0, 0, 0, .15);
+}
+.visiting-hourskudampuli .table td {
+    padding: .5rem 1rem;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.visiting-hourskudampuli .table tr:last-child td {
+    border: none;
+}
